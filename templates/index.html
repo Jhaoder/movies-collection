@@ -1,7 +1,18 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <h1>Movies</h1>
+    <h1>Movies Collection</h1>
+
+    <h2>Adicionar Filme:</h2>
+        <form action="/" method="post">
+            <label for="title" id="title", name="title" required>Título</label>
+            <input type="text">
+            <label for="genre" id="genre", name="genre" required>Genêro</label>
+            <input type="text">
+            
+        </form>
+
+    <h2>Meus Filmes:</h2>
     <ul>
         {% for movie in movies %}
             <li>{{movie['title']}}</li>
