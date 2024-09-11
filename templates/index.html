@@ -10,13 +10,15 @@
             <label for="genre">Genêro</label>
             <input type="text" id="genre", name="genre" required>
             <button type="submit">Adicionar Filme</button>
-            
         </form>
 
     <h2>Meus Filmes:</h2>
     <ul>
         {% for movie in movies %}
-            <li>{{movie['title']}}</li>
+            <li>{{ movie['title'] }} | {{ movie['genre'] }}
+                <a href="/delete/{{ movie['id'] }}"><i class="fa-regular fa-trash-can"></i></a>
+                <a href="/update/{{movie['id']}}"><i class="fa-regular fa-pen-to-square"></i></a>
+            </li>
         {% endfor %}
     </ul>
 {% endblock %}
